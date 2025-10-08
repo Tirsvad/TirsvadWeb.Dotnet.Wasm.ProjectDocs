@@ -7,7 +7,7 @@ This document outlines the process for contributing to the project.
 
 ### Reporting Bugs
 
-- Open an issue on [GitHub Issues](https://github.com/TirsvadWeb/Dotnet.JwtAuth/issues).
+- Open an issue on [GitHub Issues](https://github.com/TirsvadWeb/Dotnet.Wasm.ProjectDocs/issues).
 - Use a clear and descriptive title.
 - Include steps to reproduce, expected and actual behavior, and environment details.
 
