@@ -26,8 +26,8 @@
 - [Acknowledgments](#acknowledgments)
 
 ## Description
-
 A hub for applications projects documentation using Doxygen.
+This project development is based on the report at [docs/report.md](docs/report.md)
 
 ## Features
 
