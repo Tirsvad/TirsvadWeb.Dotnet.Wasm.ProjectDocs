@@ -99,6 +99,70 @@ Together, we can build a platform that empowers developers and enhances the over
 
 # Chapter 2: Problem Statement
 
+## Summary
+Organizations host many repositories with uneven, scattered documentation. Doxygen outputs exist but are hard to discover, keep fresh, and navigate. There is no single place to index projects, render docs consistently, or measure doc quality and usage. Admin workflows to register projects, schedule crawls, and monitor failures are manual and error‑prone.
+
+## Symptoms and Pain Points
+- Discoverability
+  - No central index of projects and docs; users rely on ad‑hoc links.
+  - Missing cross‑project and symbol‑level search with filters.
+- Documentation quality and freshness
+  - Stale docs, broken internal links, and unstable permalinks across releases.
+  - Incomplete metadata (owner, license, tags) reduces trust and reusability.
+- Admin workflows and observability
+  - Manual uploads and rebuilds; no reliable scheduling or status visibility.
+  - Weak alerting for failed crawls and limited error logs.
+- Integrations
+  - Inconsistent sync with GitHub/GitLab/Bitbucket; slow updates from source events.
+- Community and contribution
+  - Few mechanisms to suggest improvements; weak linkage to issues/PRs.
+- Security and compliance
+  - Inconsistent role‑based access for admin features; secrets management varies by team.
+
+## Problem Statements (persona‑centric)
+- As a developer, I cannot find relevant classes/functions across projects, causing wasted time and duplicate work.
+- As a new contributor, I cannot judge project quality because metadata and docs are missing or outdated, reducing my motivation to contribute.
+- As an administrator, I cannot reliably schedule or monitor documentation crawls, increasing MTTR when failures occur.
+- As a tech writer, I cannot verify link integrity and permalink stability across releases, leading to broken references.
+- As an API consumer, I cannot depend on stable URLs to deep‑link into docs from external systems, breaking integrations.
+- As a security owner, I cannot enforce RBAC and secret storage standards across admin operations, increasing risk.
+
+## Business and Technical Impact
+- Longer onboarding and slower delivery due to poor discoverability and stale docs.
+- Lower community engagement and fewer contributions.
+- Operational toil for admins; delayed detection and resolution of failures.
+- Compliance and security risks from inconsistent controls.
+
+## Root Causes (hypotheses)
+- No centralized, searchable index for projects and Doxygen artifacts.
+- Lack of automated pipelines for crawl/build/upload and metadata validation.
+- Unstructured or incomplete metadata; weak schema enforcement.
+- Missing or under‑tuned search engine and relevance signals.
+- Limited monitoring, alerting, and logs for indexing/crawl jobs.
+
+## Scope and Out of Scope
+- In scope
+  - Web UI to index, search, and render Doxygen docs with stable links and navigation.
+  - Desktop admin app (or CLI) for registration, scheduling, status, and uploads.
+  - Integrations with major VCS hosts for metadata and event‑driven updates.
+  - KPIs and reporting for search, freshness, quality, adoption, and ops.
+- Out of scope (initially)
+  - Automatic conversion of non‑Doxygen formats.
+  - Advanced editorial workflows beyond submissions/links to external issue trackers.
+
+## Constraints and Assumptions
+- Technology: .NET 9, Blazor WebAssembly for the web UI; cross‑platform desktop app.
+- Inputs: Doxygen‑generated HTML/JSON as primary documentation artifacts.
+- Platform: Linux/containerized backend, MSSQL, and scalable search engine.
+- Privacy/compliance: Role‑based access for admin features; encrypted storage for secrets.
+
+## Success Criteria (linked to KPIs)
+- Discoverability: High search success and low query latency (see FR‑002/FR‑016, NFR‑001).
+- Freshness and quality: High index freshness, low broken link rate, stable permalinks (FR‑001/FR‑004).
+- Admin efficiency: Reliable on‑time schedules, low MTTR, prompt alerts (FR‑007/FR‑008/FR‑017).
+- Adoption and engagement: Growth in indexed projects, MAU, and contributions (KPIs — Adoption & Community).
+- Security and compliance: 100% RBAC test pass, secrets encrypted at rest, zero critical vulns beyond SLA (NFR‑006/007/008).
+
 # Chapter 3: The Wishes and Requirements
 
 ## Requirements
