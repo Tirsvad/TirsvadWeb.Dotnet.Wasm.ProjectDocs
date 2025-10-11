@@ -138,7 +138,7 @@ Distributed under the AGPL-3.0 [License][license-url].
 Jens Tirsvad Nielsen - [LinkedIn][linkedin-url]
 
 ## Acknowledgments
-- [dotnet](https://dotnet.microsoft.com/)
+- [Copilot](https://copilot.microsoft.com/): Helping to create documentation.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/TirsvadWeb/Dotnet.Wasm.ProjectDocs?style=for-the-badge
