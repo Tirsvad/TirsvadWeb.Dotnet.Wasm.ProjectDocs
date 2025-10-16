@@ -7,21 +7,30 @@
     - [Goals and Objectives](#goals-and-objectives)
     - [Conclusion](#conclusion)
 - [Chapter 2: Problem Statement](#chapter-2-problem-statement)
+    - [Summary](#summary)
+    - [Symptoms and Pain Points](#symptoms-and-pain-points)
+    - [Problem Statements](#problem-statements-persona-centric)
+    - [Business and Technical Impact](#business-and-technical-impact)
+    - [Root Causes](#root-causes-hypotheses)
+    - [Scope and Out of Scope](#scope-and-out-of-scope)
+    - [Constraints and Assumptions](#constraints-and-assumptions)
+    - [Success Criteria](#success-criteria-linked-to-kpis)
 - [Chapter 3: The Wishes and Requirements](#chapter-3-the-wishes-and-requirements)
+    - [Requirements](#requirements)
     - [Functional Requirements](#functional-requirements)
         - [Web UI part](#web-ui-part)
         - [Desktop app part](#desktop-app-part)
         - [User roles & community features](#user-roles--community-features)
         - [Integrations & APIs](#integrations--apis)
         - [Other](#other)
-    - [Non-Functional Requirements (Table)](#non-functional-requirements-table)
-    - [System Requirements (Table)](#system-requirements-table)
-    - [Data & Migration Requirements (Table)](#data--migration-requirements-table)
-    - [Operational Requirements (Table)](#operational-requirements-table)
+    - [Non-Functional Requirements](#non-functional-requirements)
+    - [System Requirements](#system-requirements)
+    - [Data & Migration Requirements](#data--migration-requirements)
+    - [Operational Requirements](#operational-requirements)
     - [Recommended Targets and Notes](#recommended-targets-and-notes)
     - [Conclusion](#conclusion)
     - [Recommendations](#recommendations)
-- [Chapter 4: KPIs — Per Requirement Traceability](#chapter-4-kpis--per-requirement-traceability-tables)
+- [Chapter 4: KPIs — Per Requirement Traceability](#chapter-4-kpis--per-requirement-traceability)
     - [Functional Requirements KPIs (FR-001 — FR-005)](#functional-requirements-kpis-fr-001--fr-005)
     - [Functional Requirements KPIs (FR-006 — FR-010)](#functional-requirements-kpis-fr-006--fr-010)
     - [Functional Requirements KPIs (FR-011 — FR-015)](#functional-requirements-kpis-fr-011--fr-015)
@@ -31,15 +40,42 @@
     - [System Requirements KPIs (SR-001 — SR-005)](#system-requirements-kpis-sr-001--sr-005)
     - [Data & Migration Requirements KPIs (DR-001 — DR-002)](#data--migration-requirements-kpis-dr-001--dr-002)
     - [Operational Requirements KPIs (OR-001 — OR-002)](#operational-requirements-kpis-or-001--or-002)
-- [Chapter 4: User Roles and Interaction](#chapter-4-user-roles-and-interaction)
-- [Chapter 5: Purpose of the Project](#chapter-5-purpose-of-the-project)
-- [Chapter 6: Methodology](#chapter-6-methodology)
-- [Chapter 7: System Design](#chapter-7-system-design)
-- [Chapter 8: Quality Assurance](#chapter-8-quality-assurance)
+- [Chapter 5: Quality Criteria and Assurance](#chapter-5-quality-criteria-and-assurance)
+    - [Filename conventions](#filename-conventions)
+    - [Artefacts](#artefacts)
+        - [Domain Model](#domain-model)
+        - [Use Case](#use-case)
+        - [Use Case Flow](#use-case-flow)
+        - [OC (Operational Context)](#oc-operational-context)
+        - [Sequence Diagram](#sequence-diagram)
+        - [DCD (Design Class Diagram)](#dcd-design-class-diagram)
+    - [Coding Standards](#coding-standards)
+        - [Source Code](#source-code)
+        - [Testing](#testing)
+        - [Documentation](#documentation)
+- [Chapter 6: User Roles and Interaction](#chapter-6-user-roles-and-interaction)
+- [Chapter 7: Methodology](#chapter-7-methodology)
+- [Chapter 8: System Design](#chapter-8-system-design)
 - [Chapter 9: Risk Management](#chapter-9-risk-management)
+    - [Risk Categories](#risk-categories)
+        - [Technical Risks](#technical-risks)
+        - [Operational Risks](#operational-risks)
+        - [Compliance Risks](#compliance-risks)
+        - [Project Management Risks](#project-management-risks)
+        - [Performance Risks](#performance-risks)
+        - [Financial Risks](#financial-risks)
+    - [Prioritized Risk Level Summary](#prioritized-risk-level-summary)
+    - [Risk Rating Scale](#risk-rating-scale)
+    - [Methodology: Determining Likelihood and Impact](#methodology-determining-likelihood-and-impact)
 - [Chapter 10: Implementation Plan](#chapter-10-implementation-plan)
 - [Chapter 11: Evaluation and Feedback](#chapter-11-evaluation-and-feedback)
 - [Chapter 12: Conclusion and Recommendations](#chapter-12-conclusion-and-recommendations)
+- [Appendix](#appendix)
+    - [Glossary](#glossary)
+    - [References](#references)
+        - [Bibliography](#bibliography)
+        - [Web Links](#web-links)
+    - [Acknowledgments](#acknowledgments)
 
 
 ## Foreword
@@ -400,7 +436,110 @@ For each requirement, the following KPIs define measurable success. Adjust targe
 Consider phasing: Phase 1 (MVP): core indexing, search, docs rendering, desktop app basic admin, authentication; Phase 2: integrations, contribution workflows, community features; Phase 3: analytics, advanced UX/accessibility refinements.
 
 # Chapter 5: Quality Criteria and Assurance
-## Quality Criteria
+
+## Filename conventions
+- no spaces, special characters
+- for code files start with uppercase, for data files lowercase
+- for documentation files use hyphens to separate words
+
+## Artefacts
+
+### Domain Model
+| Criterion | Pass (Y/N) |
+|---|---|
+| Entities and value objects are identified and named using ubiquitous language |
+| Aggregates and their boundaries are defined |
+| Relationships include correct multiplicities and roles |
+| Invariants and aggregate rules are documented |
+| No cyclic dependencies across aggregates |
+| Naming is consistent and unambiguous |
+
+### Use Case
+| Criterion | Pass (Y/N) |
+|---|---|
+| Primary actor is identified |
+| Pre-conditions are defined |
+| Main success scenario steps are listed and ordered |
+| Post-conditions are defined |
+| Alternate/exception flows are referenced |
+| Linked to relevant non-functional requirements (IDs) |
+
+### Use Case Flow
+| Criterion | Pass (Y/N) |
+|---|---|
+| Step numbering is sequential and stable |
+| Each step specifies actor vs. system responsibility |
+| Guards/conditions are explicit |
+| Error/alternate paths are described |
+| UI/page references (if any) are consistent |
+| Traceability to `FR-*`/`NFR-*` IDs exists |
+
+### OC (Operational Context)
+| Criterion | Pass (Y/N) |
+|---|---|
+| External systems/services are identified |
+| Interfaces/protocols and data contracts are noted |
+| Trust boundaries are marked |
+| Data flows (directions) are shown |
+| Environment constraints (cloud/on-prem, regions) are listed |
+| Boundary security controls are described |
+
+### System Sequence Diagram
+| Criterion | Pass (Y/N) |
+|---|---|
+| Actors and system are clearly identified |
+| Lifelines are vertical and aligned |
+| Messages are horizontal and labeled with operation names |
+| Activation bars indicate processing time |
+| Return messages are shown where applicable |
+
+### Sequence Diagram
+| Criterion | Pass (Y/N) |
+|---|---|
+| Participants/lifelines cover all key components |
+| Messages labeled with operation names and direction |
+| Sync vs. async calls indicated correctly |
+| Alternative/optional fragments for branching included |
+| Error/exception handling paths included |
+| Consistent with Use Case Flow steps |
+
+### DCD (Design Class Diagram)
+| Criterion | Pass (Y/N) |
+|---|---|
+| Classes list key attributes and operations |
+| Visibility/modifiers are indicated where needed |
+| Associations have roles and multiplicities |
+| Composition/aggregation/inheritance used appropriately |
+| Design patterns (if used) are annotated |
+| Consistent mapping to Domain Model concepts |
+
+## Coding Standards
+
+### Source Code
+| Criterion (C#/.NET 9, Blazor WASM) | Pass (Y/N) |
+|---|---|
+| Target framework is `net9.0` and language version is latest |
+| Nullable reference types are enabled (`<Nullable>enable</Nullable>`) |
+| .NET analyzers enabled (`<AnalysisLevel>latest</AnalysisLevel>`) and important warnings treated as errors |
+| Consistent naming: PascalCase (types/methods), camelCase (locals/params), `_camelCase` (private fields) |
+| File-scoped namespaces used; one public type per file; file name matches type |
+| Async all the way: no `.Result`/`.Wait()`; public async methods return `Task`/`Task<T>` and end with `Async` |
+| Cancellation: public async APIs accept `CancellationToken` and pass it downstream |
+| Exceptions: no broad `catch (Exception)` without handling; preserve inner exceptions; no swallow |
+| Logging: use `ILogger<T>` with structured messages; avoid logging secrets/PII; use event IDs where applicable |
+| Dependency Injection: constructor injection only; no service locator; correct lifetimes (Singleton/Scoped/Transient) |
+| HttpClient: use DI-provided `HttpClient` in Blazor; do not instantiate per call; base address configured |
+| JS Interop: use `IJSRuntime`/`IJSObjectReference`; dispose references; avoid blocking interop calls |
+| Configuration: use Options pattern; no secrets or connection strings hard-coded |
+| Null handling: guard clauses; pattern matching; avoid `!` suppression except with justification |
+| Immutability: prefer `record`/`record struct` for DTOs and configs; avoid mutable static state |
+| Performance: avoid synchronous I/O; avoid heavy LINQ/allocations in hot paths; use pooling/`Span<T>` where justified |
+| Security: parameterized queries; validate/encode inputs; follow OWASP guidance for web features |
+| API surface: public APIs have XML docs; obsolete APIs marked with `[Obsolete]` and guidance provided |
+| Blazor components: avoid `async void` except UI event handlers; dispose resources (`IDisposable`/`IAsyncDisposable`) |
+| Analyzers/style: consistent code style via `.editorconfig` (bracing, `var` usage, qualifiers) |
+
+### Testing
 
 # Chapter 6: User Roles and Interaction
 
@@ -409,7 +548,11 @@ Consider phasing: Phase 1 (MVP): core indexing, search, docs rendering, desktop 
 # Chapter 8: System Design
 
 # Chapter 9: Risk Management
+
 ## Risk Categories
+This section categorizes potential risks associated with the project into distinct types, each with its own set of identified risks and corresponding risk measures. The categories include technical, operational, compliance, project management, performance, and financial risks. 
+Each risk is assigned a unique ID for easy reference.
+
 ### Technical Risks
 | ID      | Risk Type                 | Description |
 |---------|---------------------------|-------------|
@@ -432,17 +575,6 @@ Consider phasing: Phase 1 (MVP): core indexing, search, docs rendering, desktop 
 | TR-006 | Hardware Failures               | 2                | 4            | 8          |
 | TR-007 | Database Connection Issues      | 3                | 4            | 12         |
 
-#### Mitigation Strategy
-| ID     | Risk Type                 | Mitigation Strategy |
-|--------|---------------------------|---------------------|
-| TR-001 | Software Bugs             | Implement rigorous unit/integration tests, static analysis, reviews, and CI gates. |
-| TR-006 | Hardware Failures         | Add redundancy, regular maintenance, backups, and health probes with auto-restart. |
-| TR-004 | Compatibility Issues      | Maintain version matrices; contract tests; staged rollouts and backward-compatible APIs. |
-| TR-002 | Security Vulnerabilities  | Parameterized queries, anti-CSRF tokens, input validation, CSP, SAST/DAST scans. |
-| TR-003 | Data Breaches             | MFA, strong password policies, secure session management, encryption in transit/at rest. |
-| TR-005 | Dependency Risks          | Update dependencies regularly; monitor advisories; use dependency scanning/allow lists. |
-| TR-007 | Database Connection Issues| Monitor DB performance, connection pooling, retries, and failover/replication strategies. |
-
 ### Operational Risks
 | ID      | Risk Type                 | Description |
 |---------|---------------------------|-------------|
@@ -463,13 +595,6 @@ Consider phasing: Phase 1 (MVP): core indexing, search, docs rendering, desktop 
 | OR-005 | Inadequate Project Management   | 3                | 4            | 12         |
 | OR-006 | Database Access                 | 3                | 4            | 12         |
 
-
-#### Mitigation Strategy
-| ID     | Risk Type                 | Mitigation Strategy |
-|--------|---------------------------|---------------------|
-| OR-001 | User Experience           | Conduct user research, usability testing, and iterative design improvements. |
-| OR-002 | Administrative Overhead   | Simplify role management, provide clear documentation, and automate where possible. |
-
 ### Compliance Risks
 Compliance risks involve the potential for a project to violate laws, regulations, or industry standards.
 These risks can lead to legal penalties, reputational damage, or loss of customer trust.
@@ -485,13 +610,6 @@ The risk analyzer reviews the compliance requirements relevant to a project, ide
 |--------|---------------------------------|------------------|--------------|------------|
 | CR-001 | Regulatory Compliance           | 2                | 5            | 10         |
 | CR-002 | Intellectual Property Issues    | 2                | 4            | 8          |
-
-
-#### Mitigation Strategy
-| ID     | Risk Type                 | Mitigation Strategy |
-|--------|---------------------------|---------------------|
-| CR-001 | Regulatory Compliance     | Regular audits, data protection policies, and staff training on compliance. |
-| CR-002 | Intellectual Property Issues | Use licensed content, maintain a license inventory, and consult legal experts when necessary. |
 
 ### Project Management Risks
 Project management risks are associated with the planning, execution, and monitoring of a project. These risks can stem from poor communication, unrealistic timelines, or inadequate resource allocation. The risk analyzer evaluates the project management practices in place, identifying potential risks and offering recommendations to improve project oversight and control.
@@ -511,15 +629,6 @@ Project management risks are associated with the planning, execution, and monito
 | PMR-003| Scope Creep                     | 3                | 4            | 12          |
 | PMR-004| Resource Availability           | 3                | 3            | 9           |
 
-
-#### Mitigation Strategy
-| ID     | Risk Type                 | Mitigation Strategy |
-|--------|---------------------------|---------------------|
-| PMR-001| Poor Communication        | Regular meetings, clear documentation, and defined communication channels. |
-| PMR-002| Unrealistic Timelines     | Use historical data for estimates, buffer time, and regular progress reviews. |
-| PMR-003| Scope Creep               | Change control processes, stakeholder agreement on scope, and regular scope reviews. |
-| PMR-004| Resource Availability     | Cross-training team members, maintaining a resource pool, and having backup plans. |
-
 ### Performance Risks
 Performance risks relate to the ability of a project to meet its performance requirements and expectations. These risks can include issues such as slow response times, scalability challenges, or inadequate system capacity. The risk analyzer assesses the performance aspects of a project, identifying potential risks and suggesting strategies to optimize performance and ensure a smooth user experience.
 
@@ -531,12 +640,7 @@ Performance risks relate to the ability of a project to meet its performance req
 | ID     | Risk Type                       | Likelihood (1-5) | Impact (1-5) | Risk Level |
 |--------|---------------------------------|------------------|--------------|------------|
 | PRF-001| Scalability Issues              | 3                | 4            | 12         |
-
-
-#### Mitigation Strategy
-| ID     | Risk Type                 | Mitigation Strategy |
-|--------|---------------------------|---------------------|
-| PRF-001| Scalability Issues        | Design for horizontal scaling; load testing; optimize code and queries. |
+|
 
 ### Financial Risks
 Financial risks pertain to the monetary aspects of a project, including budget overruns, funding shortages, or unexpected costs. The risk analyzer examines the financial components of a project, identifying potential risks and providing strategies to manage and mitigate them effectively.
@@ -550,29 +654,47 @@ Financial risks pertain to the monetary aspects of a project, including budget o
 |--------|---------------------------------|------------------|--------------|------------|
 | FIN-001| Budget Overruns                 | 3                | 4            | 12         |
 
-#### Mitigation Strategy
-| ID     | Risk Type                 | Mitigation Strategy |
-|--------|---------------------------|---------------------|
-| FIN-001| Budget Overruns           | Implement strict budget monitoring and control measures. |
 
 ## Prioritized Risk Level Summary
 
 ### Critical (must be addressed immediately)
-| Risk ID | Risk Type                     | Risk Level |
-|---------|-------------------------------|------------|
+| Risk ID | Risk Type                | Risk Level | Mitigation Strategy |
+|---------|--------------------------|------------|---------------------|
+| TR-001  | Software Bugs            | 20         | Implement rigorous unit/integration tests, static analysis, reviews, and CI gates. |
+| TR-002  | Security Vulnerabilities | 15         | Parameterized queries, anti-CSRF tokens, input validation, CSP, and SAST/DAST scans. |
+| TR-003  | Data Breaches            | 15         | MFA, strong password policies, secure session management, encryption in transit/at rest. |
 
 ### High (needs active management)
-| Risk ID | Risk Type                     | Risk Level |
-|---------|-------------------------------|------------|
+| Risk ID | Risk Type                     | Risk Level | Mitigation Strategy |
+|---------|-------------------------------|------------|---------------------|
+| TR-005  | Dependency Risks              | 12         | Update dependencies regularly; monitor advisories; use dependency scanning/allow lists. |
+| TR-007  | Database Connection Issues    | 12         | Monitor DB performance, connection pooling, retries, and failover/replication strategies. |
+| OR-005  | Inadequate Project Management | 12         | Adopt iterative planning; maintain risk register; improve visibility and realistic scope/schedule. |
+| OR-006  | Database Access               | 12         | Centralize secrets; least-privilege, audited access; secure tunnels/VPN; regular rotation. |
+| PMR-002 | Unrealistic Timelines         | 12         | Use historical data for estimates, add buffers, and perform regular progress reviews. |
+| PMR-003 | Scope Creep                   | 12         | Enforce change control; stakeholder agreement on scope; regular scope reviews. |
+| PRF-001 | Scalability Issues            | 12         | Design for horizontal scaling; load testing; optimize code and queries. |
+| FIN-001 | Budget Overruns               | 12         | Strict budget monitoring; variance tracking; staged releases and cost controls. |
 
 
 ### Medium (needs monitoring and mitigation)
-| Risk ID | Risk Type                     | Risk Level |
-|---------|-------------------------------|------------|
+| Risk ID | Risk Type                    | Risk Level | Mitigation Strategy |
+|---------|------------------------------|------------|---------------------|
+| TR-004  | Compatibility Issues         | 9          | Maintain version matrices; contract tests; staged rollouts and backward-compatible APIs. |
+| TR-006  | Hardware Failures            | 8          | Add redundancy, backups, health probes, and automated restarts. |
+| OR-001  | User Experience              | 9          | User research, usability testing, and iterative design improvements. |
+| OR-002  | Administrative Overhead      | 9          | Simplify role management; automate routine tasks; improve documentation. |
+| OR-003  | Workflow Inefficiencies      | 9          | Value stream mapping; CI/CD optimization; automate repetitive steps. |
+| OR-004  | Lack of Skilled Personnel    | 8          | Training, cross-training, mentoring, and targeted hiring. |
+| CR-001  | Regulatory Compliance        | 10         | Regular audits; data protection policies; staff training on compliance. |
+| CR-002  | Intellectual Property Issues | 8          | Use licensed content; maintain license inventory; consult legal when needed. |
+| PMR-001 | Poor Communication           | 9          | Regular meetings; clear documentation; defined communication channels. |
+| PMR-004 | Resource Availability        | 9          | Cross-train team; maintain a backup pool; contingency planning. |
 
 ### Low (will probably not be addressed)
-| Risk ID | Risk Type                     | Risk Level |
-|---------|-------------------------------|------------|
+| Risk ID | Risk Type       | Risk Level | Mitigation Strategy |
+|---------|-----------------|------------|---------------------|
+| —       | None identified | —          | —                   |
 
 ## Risk Rating Scale
 
